@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "2fa807a1-2043-44b2-83fd-1b1f5e7563a0",
+		"name": "Bookstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27701618"
+	},
+	"item": [
+		{
+			"name": "https://demoqa.com/BookStore/v1/Books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var search = {",
+							"    \"books\": {",
+							"        \"type\": \"string\"",
+							"    }",
+							"};",
+							"",
+							"var title = [\"Git Pocket Guide\",\"Learning JavaScript Design Patterns\",\"Designing Evolvable Web APIs with ASP.NET\",\"Speaking JavaScript\",\"You Don't Know JS\",\"Programming JavaScript Applications\",\"Eloquent JavaScript, Second Edition\",\"Understanding ECMAScript 6\"];",
+							"var author = [\"Richard E. Silverman\",\"Addy Osmani\",\"Glenn Block et al.\",\"Axel Rauschmayer\",\"Kyle Simpson\",\"Eric Elliott\",\"Marijn Haverbeke\",\"Nicholas C. Zakas\" ];",
+							"",
+							"pm.test('Search is valid', function () {",
+							"    pm.expect(tv4.validate(title, search)).to.be.exist;",
+							"    pm.expect(tv4.validate(author, search)).to.be.exist;    ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://demoqa.com/BookStore/v1/Books",
+					"protocol": "https",
+					"host": [
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"BookStore",
+						"v1",
+						"Books"
+					]
+				},
+				"description": "Automate the REST API Books endpoint"
+			},
+			"response": []
+		}
+	]
+}
