@@ -8,12 +8,78 @@ INSTALLATION
 
 Go to https://www.postman.com/downloads/ select your configuration and download.
 
+Con
+
 CONFIGURATION
 -------------
 Step 1
+
 Open postman app and select at the down below skip and go to the app.
 Step 2
-In the middle at the top select plus sysmbol a new http request tab appear
+
+In the middle at the top select file and the import
+Step 3
+
+A new pop up appear in the url bar paste this 
+{
+	"info": {
+		"_postman_id": "2fa807a1-2043-44b2-83fd-1b1f5e7563a0",
+		"name": "Bookstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27701618"
+	},
+	"item": [
+		{
+			"name": "https://demoqa.com/BookStore/v1/Books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var search = {",
+							"    \"books\": {",
+							"        \"type\": \"string\"",
+							"    }",
+							"};",
+							"",
+							"var title = [\"Git Pocket Guide\",\"Learning JavaScript Design Patterns\",\"Designing Evolvable Web APIs with ASP.NET\",\"Speaking JavaScript\",\"You Don't Know JS\",\"Programming JavaScript Applications\",\"Eloquent JavaScript, Second Edition\",\"Understanding ECMAScript 6\"];",
+							"var author = [\"Richard E. Silverman\",\"Addy Osmani\",\"Glenn Block et al.\",\"Axel Rauschmayer\",\"Kyle Simpson\",\"Eric Elliott\",\"Marijn Haverbeke\",\"Nicholas C. Zakas\" ];",
+							"",
+							"pm.test('Search is valid', function () {",
+							"    pm.expect(tv4.validate(title, search)).to.be.exist;",
+							"    pm.expect(tv4.validate(author, search)).to.be.exist;    ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://demoqa.com/BookStore/v1/Books",
+					"protocol": "https",
+					"host": [
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"BookStore",
+						"v1",
+						"Books"
+					]
+				},
+				"description": "Automate the REST API Books endpoint"
+			},
+			"response": []
+		}
+	]
+}
+
+Step 4
+
+Click on the dropdown symbol an click on GET, click on Test and down below in test results and click on send button.
 
 
 To test the front-end we need to install two open-source app Node.js and Cypress.
